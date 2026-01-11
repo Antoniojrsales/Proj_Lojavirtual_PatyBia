@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap');
+
+:root{
+    --text-color-white:#ffffff;
+    --text-color-black:#000000;
+    --bg-color-01:#dadada;
+    --bg-color-02:#f8f8f8;
+    --color-00:#0000001a;
+    --color-01:#471b96;
+    --color-02:#6600ff;
+    --color-03:#3333ff;
+    --color-04:#212d80;
+    --color-05:#333;
+    --color-06:#888;
+    --color-07:#666;
+    --color-zap:#25d366;
+}
+
+/* Estilos globais */
+*{
+    margin: 0; /* Remove todas as margens externas padrão dos elementos */
+    padding: 0; /* Remove todos os preenchimentos internos padrão dos elementos */
+    box-sizing: border-box; /* Define o modelo de caixa para incluir bordas e preenchimentos dentro da largura/altura */
+    text-decoration: none;/* Remove sublinhados ou outros estilos decorativos padrão dos textos (como em links) */
+    border: none; /* Remove bordas padrão de elementos como botões ou campos de entrada */
+    scroll-behavior: smooth; /* Torna o comportamento de rolagem mais suave, ideal para âncoras e navegações */
+}
+
+html {
+    font-family: 'Poppins', sans-serif; /* Define a fonte principal do documento */
+    font-size: 16px; /* Define o tamanho base da fonte */
+}
+
+body {
+    background-color: var(--bg-color-02);
+    color: var(--color-05);
+    line-height: 1.6;
+}
+/* /Estilos globais */
+
+/* Header */
+header{
+    position: fixed;
+    width: 100%;
+    height: 77px;
+    margin: 0 auto;
+    padding: 20px 0;  
+    background: var(--color-02);
+    color: var(--text-color-white);
+    transition: background 0.3s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    z-index: 600;
+}
+
+.logo{
+    font-size: 1.7rem;
+    color: var(--text-color-white);
+    font-weight: 600;
+    cursor: default;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav ul li {
+    margin: 0 40px 0px 0px;
+}
+
+.nav ul li a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color-white);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav ul li a:hover {
+    color: var(--text-color-white);
+}
+/* /Header */
+
+/* Botão hamburguer */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color-white);
+}
+/* /Botão hamburguer */
+
+/* Button Zap */
+.zap-link{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    bottom: 120px;
+    left: 80px;
+    background-color: var(--color-zap);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    animation: pulse-green 2s infinite;    
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.zap-link:hover {
+    transform: scale(1.1);
+}
+
+.zap-link i {
+    color: var(--text-color-white);
+    margin: 0; /* Remove margens que podem desalinhá-lo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* /Button Zap */
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 92vh;
+    padding: 80px 5%;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-color-black);
+    line-height: 1.3;
+    gap: 30px;
+}
+
+.left-section {
+    width: 60%;
+}
+
+.hero-benefits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.benefit {
+    display: flex;       /* Alinha ícone e texto lado a lado */
+    align-items: center; /* Centraliza verticalmente o ícone com o texto */
+    justify-content: center;
+    flex: 1;
+    gap: 15px;           /* Espaço entre o ícone e o texto */
+    padding: 0 10px;
+    border-right: 1px solid #ddd; /* Linha divisória da Imagem 3 */
+}
+
+.benefit:last-child {
+    border-right: none;
+}
+
+.benefit i {
+    font-size: 1.8rem;
+    color: var(--color-02); 
+}
+
+.benefit-text {
+    display: flex;
+    flex-direction: column; /* Coloca o span embaixo do strong */
+    text-align: left;       /* Alinhamento à esquerda como na imagem */
+}
+
+.benefit strong {
+    font-size: 14px;
+    color: var(--text-color-black);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.benefit span {
+    font-size: 12px;
+    color: var(--color-07);
+    margin-top: 2px;
+}
+
+.content h1 {
+    margin-top: 40px; 
+    text-align: center;
+    font-size: 3rem;
+    color: var(--text-color-black);
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 0 auto; /* Centraliza o bloco na página */
+    display: table;           /* Truque para o bloco ter a largura do maior texto */
+    text-align: left;         /* Texto alinhado à esquerda para leitura fácil */
+}
+
+.product-list li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-05);
+    padding: 12px 0;          /* Espaçamento entre as linhas */
+    border-bottom: 1px solid #eee; /* Linha sutil separando os itens */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Remove a linha do último item para não sobrar espaço */
+.product-list li:last-child {
+    border-bottom: none;
+}
+
+/* Estilo do ícone de check */
+.product-list li::before {
+    content: "\f00c";          /* Código do ícone 'check' do Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--color-zap);   /* Verde para passar ideia de confirmação */
+    font-size: 0.9rem;
+}
+
+
+/* Seção de Imagens */
+.gallery-container {
+    flex: 1;
+    max-width: 80vh;
+    justify-content: center;
+}
+
+.swiper {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hero-wrapper img {
+    width: 550px;  /* Largura fixa */
+    height: 550px; /* Altura fixa */
+    object-fit: cover; /* Mantém a proporção cortando o excesso */
+    border-radius: 10px; /* (Opcional) Bordas arredondadas para um visual mais moderno */
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+/* /Hero */
+
+/* Contact */
+.contact {
+    display: flex;
+    flex-wrap: wrap; /* Garante que no mobile os itens fiquem um abaixo do outro */
+    justify-content: space-between;
+    padding: 60px 10%;
+    background-color: var(--color-02);
+    color: var(--text-color-white);
+    gap: 40px;
+}
+
+.left-contact {
+    flex: 2; /* Dá mais espaço para o texto descritivo */
+    min-width: 300px;
+}
+
+.center-contact, .right-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+.benefit-contact, .benefit-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.benefit-address{
+    margin-top: 15px;
+}
+
+.benefit-text-contact a {
+    color: var(--text-color-white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.benefit-text-contact a:hover {
+    color: var(--bg-color-01); /* Cor da sua marca ao passar o mouse */
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: var(--text-color-white);
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+}
+/* /Contact */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: var(--color-05);
+    color: var(--text-color-white);
+}
+
+/* Responsividade  Header */
+@media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      z-index: 1001;
+      padding: 10px;
+    }
+  
+    .nav {
+      position: absolute;
+      top: 66px;
+      left: 0;
+      width: 100%;
+      background: var(--bg-color-01);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
+  
+    .nav.active {
+      display: flex;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .nav ul li {
+      margin: 10px 0;
+    }
+  }
+
+  /* Responsividade  Hero */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse; /* Imagem fica em cima ou embaixo do texto no mobile */
+        text-align: center;
+        padding-top: 120px; /* Evita que o header cubra o conteúdo */
+    }
+
+    .left-section {
+        width: 100%; /* Ocupa a largura total no mobile */
+    }
+
+    .hero-benefits {
+        flex-direction: column; /* Benefícios ficam um abaixo do outro */
+        align-items: center;
+    }
+
+    .zap-link {
+        width: 50px;
+        height: 50px;
+        bottom: 20px; /* No celular, é melhor ficar embaixo */
+        top: auto;    /* Remove o posicionamento do topo */
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-benefits {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .benefit {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
